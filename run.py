@@ -113,17 +113,4 @@ while(amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_
         current_letters_right = printWord(current_letters_guessed)
         printLines()
 
-# This code snippet represents the core game loop where the player makes guesses.
-# It continues executing as long as the player has not reached the maximum allowed
-# wrong guesses (6) and has not guessed all the letters in the word correctly.
-# 
-# It displays the current state of the game, including guessed letters, prompts the
-# user for a letter guess, and updates the game state based on whether the guess is
-# correct or incorrect. The hangman drawing is also updated with each wrong guess.
-# 
-# Additionally, it calls the 'printWord' function to display the partially guessed word
-# and 'printLines' to print separator lines between game rounds.
-
-
-
 print("Game is over! Thank you for playing :)")
