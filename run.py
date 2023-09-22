@@ -3,8 +3,18 @@ import random
 print("Welcome to Hangman")
 print("----------------------------------------")
 
-wordDictionary = ["project", "monkey", "book", "sunflower", "coffee", "mouse", "picture", "school",
-"sandwich", "definition"]
+wordDictionary = [
+    "project", 
+    "monkey", 
+    "book", 
+    "sunflower", 
+    "coffee",
+    "mouse", 
+    "picture", 
+    "school", 
+    "sandwich", 
+    "definition"
+]
 
 ### Choose a random word
 randomWord = random.choice(wordDictionary)
@@ -67,3 +77,53 @@ def printWord(guessedLetters):
             print(" ", end=" ")
         counter+=1
     return rightLetters
+
+def printLines():
+    print("\r")
+    for char in randomWord:
+        print("\u203E", end=" ")
+
+length_of_word_to_guess = len(randomWord)
+amount_of_times_wrong = 0
+current_guess_index = 0
+current_letters_guessed = []
+current_letters_right = 0
+
+while(amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_guess):
+    print("\nLetters guessed so far: ")
+    for letter in current_letters_guessed:
+        print(letter, end=" ")
+    ### Prompt user for input
+    letterGuessed = input("\nGuess a letter: ")
+    ### User is right
+    if(randomWord[current_guess_index] == letterGuessed):
+        print_hangman(amount_of_times_wrong)
+        ### Print word
+        current_guess_index+=1
+        current_letters_guessed.append(letterGuessed)
+        current_letters_right = printWord(current_letters_guessed)
+        printLines()
+    ### User is wrong
+    else:
+        amount_of_times_wrong+=1
+        current_letters_guessed.append(letterGuessed)
+        ### Update the drawing
+        print_hangman(amount_of_times_wrong)
+        ### Print word
+        current_letters_right = printWord(current_letters_guessed)
+        printLines()
+
+# This code snippet represents the core game loop where the player makes guesses.
+# It continues executing as long as the player has not reached the maximum allowed
+# wrong guesses (6) and has not guessed all the letters in the word correctly.
+# 
+# It displays the current state of the game, including guessed letters, prompts the
+# user for a letter guess, and updates the game state based on whether the guess is
+# correct or incorrect. The hangman drawing is also updated with each wrong guess.
+# 
+# Additionally, it calls the 'printWord' function to display the partially guessed word
+# and 'printLines' to print separator lines between game rounds.
+
+
+
+print("Game is over! Thank you for playing :)")
