@@ -101,7 +101,8 @@ def input_next_guess(current_letters_guessed):
     Keeps asking for user input unless user enters a valid input.
 
     Args:
-        current_letters_guessed (list[string]): List of currently guessed user inputs.
+        current_letters_guessed (list[string]):
+        List of currently guessed user inputs.
 
     Returns:
         string: A valid user input.
