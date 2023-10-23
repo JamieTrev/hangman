@@ -1,9 +1,14 @@
 import random
 
-print("Welcome to Hangman")
-print("----------------------------------------")
+MAX_ATTEMPTS = 6
 
-wordDictionary = [
+WELCOME_MESSAGE = """
+Welcome to Hangman
+----------------------------------------
+"""
+
+
+WORD_DICTIONARY = [
     "project",
     "monkey",
     "python",
@@ -13,14 +18,8 @@ wordDictionary = [
     "picture",
     "school",
     "sandwich",
-    "definition"
+    "definition",
 ]
-
-randomWord = random.choice(wordDictionary)
-randomWord = randomWord.lower()
-
-for x in randomWord:
-    print("_", end=" ")
 
 
 def print_hangman(wrong):
@@ -73,55 +72,110 @@ def print_hangman(wrong):
        /|\  |
        / \  |
            ===
-        """
+        """,
     ]
     print(hangman_images[wrong])
 
 
-def printWord(guessedLetters):
-    for char in randomWord:
+def print_current_word(current_word, guessedLetters):
+    for char in current_word:
         if char in guessedLetters:
             print(char, end=" ")
         else:
             print("_", end=" ")
 
 
-def printLines():
-    print("\n" + "\u203E " * len(randomWord))
+def print_empty_lines(current_word):
+    print("\n" + "\u203E " * len(current_word))
 
 
-length_of_word_to_guess = len(randomWord)
-amount_of_times_wrong = 0
-current_letters_guessed = []
-current_letters_right = 0
-
-while amount_of_times_wrong != 6:
+def print_current_guessed(current_letters_guessed):
     print("\nLetters guessed so far: ")
     for letter in current_letters_guessed:
         print(letter, end=" ")
 
-    letterGuessed = input("\nGuess a letter: ").lower()
 
-    if letterGuessed in current_letters_guessed:
-        print("You have already guessed that letter.")
-        continue
-    current_letters_guessed.append(letterGuessed)
+def input_next_guess(current_letters_guessed):
+    """Accepts user input and makes sure it is valid.
 
-    if letterGuessed in randomWord:
-        current_letters_right = sum(1 for char in randomWord if char in current_letters_guessed)  # noqa
-        printWord(current_letters_guessed)
-        printLines()
+    Keeps asking for user input unless user enters a valid input.
 
-        if current_letters_right == length_of_word_to_guess:
-            print("\nCongratulations! You've guessed the word: " + randomWord)
-            break  # Exit the loop as the game is won
+    Args:
+        current_letters_guessed (list[string]): List of currently guessed user inputs.
+
+    Returns:
+        string: A valid user input.
+    """
+    while True:
+        user_input = input("\nGuess a letter: ").lower()
+
+        if not user_input.isalpha():
+            print("Only alphabets are allowed...")
+            continue
+
+        if len(user_input) > 1:
+            print("Only enter one character..")
+            continue
+
+        if user_input in current_letters_guessed:
+            print("You have already guessed that letter.")
+            continue
+
+        return user_input
+
+
+def check_guessed_word(
+    current_letters_guessed, current_word, user_input, current_letters_right
+):
+    current_letters_guessed.append(user_input)
+
+    print_current_word(current_word, current_letters_guessed)
+    print_empty_lines(current_word)
+    if user_input in current_word:
+        current_letters_right = sum(
+            1 for char in current_word if char in current_letters_guessed
+        )  # noqa
+
+        if current_letters_right == len(current_word):
+            print("\nCongratulations! You've guessed the word:" + current_word)
+        return True
     else:
-        amount_of_times_wrong += 1
-        print_hangman(amount_of_times_wrong)
-        printWord(current_letters_guessed)
-        printLines()
+        return False
 
-if amount_of_times_wrong == 6:
-    print("\nSorry, you've run out of attempts. The word was:", randomWord)
 
-print("Game is over! Thank you for playing :)")
+def main():
+    amount_of_times_wrong = 0
+    current_letters_guessed = []
+    current_letters_right = 0
+
+    print(WELCOME_MESSAGE)
+
+    current_word = random.choice(WORD_DICTIONARY)
+    current_word = current_word.lower()
+    print_empty_lines(current_word)
+
+    while amount_of_times_wrong != MAX_ATTEMPTS:
+        print_current_guessed(current_letters_guessed)
+        user_input = input_next_guess(current_letters_guessed)
+
+        is_input_valid = check_guessed_word(
+            current_letters_guessed,
+            current_word,
+            user_input,
+            current_letters_right,
+        )
+
+        if not is_input_valid:
+            amount_of_times_wrong += 1
+            print_hangman(amount_of_times_wrong)
+
+    if amount_of_times_wrong == MAX_ATTEMPTS:
+        print(
+            "\nSorry, you've run out of attempts. The word was:", current_word
+        )
+
+    print("Game is over! Thank you for playing :)")
+
+
+if __name__ == "__main__":
+    main()
