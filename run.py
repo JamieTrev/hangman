@@ -23,6 +23,11 @@ WORD_DICTIONARY = [
 
 
 def print_hangman(wrong):
+    """Prints the hangman based on the number of incorrect guesses.
+
+    Args:
+        wrong (int): The number of incorrect guesses made by the player.
+    """
     hangman_images = [
         """
         +---+
@@ -78,6 +83,13 @@ def print_hangman(wrong):
 
 
 def print_current_word(current_word, guessedLetters):
+    """Prints the current word with correctly guessed letters
+    and underscores for unguessed letters.
+
+    Args:
+        current_word (str): The word to be guessed.
+        guessedLetters (list[str]): List of letters guessed by the player.
+    """
     for char in current_word:
         if char in guessedLetters:
             print(char, end=" ")
@@ -86,10 +98,21 @@ def print_current_word(current_word, guessedLetters):
 
 
 def print_empty_lines(current_word):
+    """Prints empty lines to separate word display.
+
+    Args:
+        current_word (str): The word to be guessed.
+    """
     print("\n" + "\u203E " * len(current_word))
 
 
 def print_current_guessed(current_letters_guessed):
+    """Prints the letters guessed so far by the player.
+
+    Args:
+        current_letters_guessed (list[str]):
+        List of letters guessed by the player.
+    """
     print("\nLetters guessed so far: ")
     for letter in current_letters_guessed:
         print(letter, end=" ")
@@ -128,6 +151,19 @@ def input_next_guess(current_letters_guessed):
 def check_guessed_word(
     current_letters_guessed, current_word, user_input, current_letters_right
 ):
+    """Checks if the guessed word is correct and updates the game state.
+
+    Args:
+        current_letters_guessed (list[str]):
+        List of letters guessed by the player.
+        current_word (str): The word to be guessed.
+        user_input (str): The user's input guess.
+        current_letters_right (int):
+        The number of letters guessed correctly so far.
+
+    Returns:
+        True if the guessed word is correct, False otherwise.
+    """
     current_letters_guessed.append(user_input)
 
     print_current_word(current_word, current_letters_guessed)
@@ -145,6 +181,7 @@ def check_guessed_word(
 
 
 def main():
+    """The main function to run the Hangman game."""
     amount_of_times_wrong = 0
     current_letters_guessed = []
     current_letters_right = 0
