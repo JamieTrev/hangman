@@ -5,11 +5,11 @@ MAX_ATTEMPTS = 6
 WELCOME_MESSAGE = """
 Welcome to Hangman
 ----------------------------------------
-1 - You have 7 attempts to try to find the right word by
-    inputting letters or the full word
-2 - If you guess a wrong letter you will lose an attempt and the
-    hangman will begin building
-3 - When you reach 0 lives you will be hung and the game is over
+Can you work out what the hidden word is?
+
+Guess 1 letter at a time but choose wisely
+as any more than 6 incorrect guesses and
+you'll be hung and the game is over!
 
 GOOD LUCK!
 ----------------------------------------
