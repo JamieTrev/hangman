@@ -93,11 +93,15 @@ Once the user has guessed a single letter from the alphabet, they would have eit
 If the user guesses an incorrect letter, as pictured, the user will see the first of 6 hangman stages displayed in the portal. This is the first picture that shows the updated 'Letters guessed so far' box so the user knows not to guess those letters again.
 
 ### Guessing the same letter
+
+![already guessed](images/letters_guessed_so_far.png)
+
 If the user attempts the guess a letter which has already been entered, they will receive a message notifying them that 'You have already guessed that letter', and the user can then guess another letter. This does not effect the number of correct or incorrect guesses.
 
 ### Only alphabets are allowed
 
 ![only alphabets are allowed](images/only_alphabets.png)
+![only one](images/only_one_character.png)
 
 The user can only enter letters in the english alphabet, if the user was to enter a number, special character or even an empty space then the user would receive a message 'Only alphabets are allowed'. 
 Similarly, as the user can only guess one letter at a time, if the user guesses multiple letters the user would receive a message 'Only enter one character'. Neither of these effect the number of correct or incorrect guesses.
@@ -106,6 +110,9 @@ Similarly, as the user can only guess one letter at a time, if the user guesses 
 If the user guesses all the letters of the word before entering 6 incorrect guesses the user wins and is congratulated with the following message 'Congratulations! You've guessed the word:' followed by the word they guessed correctly.
 
 ### Losing
+
+![sorry](images/sorry.png)
+
 With each incorrect guess the user will see the development of the hangman stages. If the user accumulates 6 incorrect guesses, they will see the entire hangman display, the game is over and will receive a message 'Sorry, you've run out of attempts, the word was:' followed by the correct word and the game is over.
 
 ## Technologies Used
