@@ -37,8 +37,6 @@ Hangman is a Python terminal game, which runs in the Code Institute mock termina
     * [Cloning this Project](#cloning-this-project)
 * [Credits](#credits)
 * [Content](#content)
-* [Information Sources](#information-sources)
-* [Special Thanks](#special-thanks)
 
 ## User Experience
 ### User Stories
@@ -221,7 +219,7 @@ I contacted student care and tutor assistance to rectify this issue and create a
 * All the content in the game is original 
 * The terminal function and template for the deployable application was provided by [Code Institute - Template](https://github.com/Code-Institute-Org/python-essentials-template)
   
-### Information Sources
+### Information Sources / Resources
 
 * [W3Schools - Python](https://www.w3schools.com/python/)
 * [Scrimba - Pyhton](https://scrimba.com/learn/python)
