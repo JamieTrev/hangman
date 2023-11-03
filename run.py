@@ -3,7 +3,12 @@ import random
 MAX_ATTEMPTS = 6
 
 WELCOME_MESSAGE = """
-Welcome to Hangman
+Welcome to
+ _  _                                
+ | || |__ _ _ _  __ _ _ __  __ _ _ _  
+ | __ / _` | ' \/ _` | '  \/ _` | ' \ 
+ |_||_\__,_|_||_\__, |_|_|_\__,_|_||_|
+                |___/                 
 ----------------------------------------
 Can you work out what the hidden word is?
 
@@ -14,7 +19,6 @@ you'll be hung and the game is over!
 GOOD LUCK!
 ----------------------------------------
 """
-
 
 WORD_DICTIONARY = [
     "project",
