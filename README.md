@@ -1,14 +1,13 @@
 
 # Hangman - Game 
 
-![hangman image](images/hangman-image.png) 
+![hangman image](images/hangman-image.png)
+[Live Project Here](https://hangman-python-p3-ab52303d13c5.herokuapp.com/)
 
 # Introduction
 Project milestone 3 for Code Institute Full-stack development program: Python Terminal.
 <brZ>
 Hangman is a Python terminal game, which runs in the Code Institute mock terminal on Heroku. The main goal of the game is to guess letters in order to find the word that the computer randomly selects. This project was inspired by the pencil guessing game for two or more players. 
-
-[Live Project Here](https://hangman-python-p3-ab52303d13c5.herokuapp.com/)
 
 ## README Table Content
 
@@ -22,9 +21,8 @@ Hangman is a Python terminal game, which runs in the Code Institute mock termina
     * [ Incorrect Guess](#incorrect-guess)
     * [Guessing the same letter](#guessing-the-same-letter)
     * [Only alphabets are allowed](#only-alphabets-are-allowed) 
-    * [Correctly guessed word](#correctly-guessed-word)
-    * [HANGMAN - Game End](#hangman-game-end)
-    
+    * [Winning](#winning)
+    * [Losing](#losing)
 * [Technologies Used](#technologies-used)
     * [Languages Used](#languages-used)
     * [Programs Used](#programs-used)
@@ -40,7 +38,6 @@ Hangman is a Python terminal game, which runs in the Code Institute mock termina
 * [Content](#content)
 
 ## User Experience
-
 ### User Stories
 
 * As a website creator, I want to:
@@ -71,6 +68,8 @@ The user is welcomed to the game with a simple message and clear explanation of 
 
 ### Hangman Start Up
 
+![start up](images/Start.png)
+
 When the game begins to run, the user is receives an instant welcome message followed by a description of how to play the game.
 
 The user has the following information in preparation to start the game:
@@ -82,22 +81,31 @@ The user has the following information in preparation to start the game:
 In the pictured example you can see the user has to guess a 5 letter.
 
 ### Correct Guess
+
+![correct guess](images/correct_guess.png)
+
 Once the user has guessed a single letter from the alphabet, they would have either guess correctly or incorrectly. From this picture you can see the user guess 'e' correctly and it is the last letter of the 5 letter word.
 
 ### Incorrect Guess
+
+![incorrect guess](images/incorrect_guess.png)
+
 If the user guesses an incorrect letter, as pictured, the user will see the first of 6 hangman stages displayed in the portal. This is the first picture that shows the updated 'Letters guessed so far' box so the user knows not to guess those letters again.
 
 ### Guessing the same letter
 If the user attempts the guess a letter which has already been entered, they will receive a message notifying them that 'You have already guessed that letter', and the user can then guess another letter. This does not effect the number of correct or incorrect guesses.
 
 ### Only alphabets are allowed
+
+![only alphabets are allowed](images/only_alphabets.png)
+
 The user can only enter letters in the english alphabet, if the user was to enter a number, special character or even an empty space then the user would receive a message 'Only alphabets are allowed'. 
 Similarly, as the user can only guess one letter at a time, if the user guesses multiple letters the user would receive a message 'Only enter one character'. Neither of these effect the number of correct or incorrect guesses.
 
-### Correctly guessed word
+### Winning
 If the user guesses all the letters of the word before entering 6 incorrect guesses the user wins and is congratulated with the following message 'Congratulations! You've guessed the word:' followed by the word they guessed correctly.
 
-### HANGMAN Game End
+### Losing
 With each incorrect guess the user will see the development of the hangman stages. If the user accumulates 6 incorrect guesses, they will see the entire hangman display, the game is over and will receive a message 'Sorry, you've run out of attempts, the word was:' followed by the correct word and the game is over.
 
 ## Technologies Used
@@ -120,6 +128,8 @@ With each incorrect guess the user will see the development of the hangman stage
 
 ### CI PEP8 Replacement
 
+![pep8](images/pep8-linted.png)
+
 Since the demise of pep8online, Code Institute recommended using https://pep8ci.herokuapp.com/) 
 
 Features of this include:  
@@ -130,7 +140,9 @@ Features of this include:
 
 Once I had printed my code, the only results picked up where 'trailing whitespace' within the logo and 'invalid escape sequence' within the hangman stages to create an image.
   
-### Lighthouse 
+### Lighthouse
+
+![lighthouse](images/lighthouse.png)
 
  Lighthouse was used to test performance,  accessibility, best practices, and SEO on the Desktop.
 
