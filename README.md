@@ -1,11 +1,11 @@
 
 # Hangman - Game
-<brZ>
-[Live Project Here](https://hangman-python-p3-ab52303d13c5.herokuapp.com/)
-<brZ>
+(Developed by Jamie Hughes)
+
 ![hangman image](images/hangman-image.png)
 
 # Introduction
+[Live Project Here](https://hangman-python-p3-ab52303d13c5.herokuapp.com/)
 Project milestone 3 for Code Institute Full-stack development program: Python Terminal.
 <brZ>
 Hangman is a Python terminal game, which runs in the Code Institute mock terminal on Heroku. The main goal of the game is to guess letters in order to find the word that the computer randomly selects. This project was inspired by the pencil guessing game for two or more players. 
