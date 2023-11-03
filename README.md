@@ -1,8 +1,9 @@
 
-# Hangman - Game 
-
-![hangman image](images/hangman-image.png)
+# Hangman - Game
+<brZ>
 [Live Project Here](https://hangman-python-p3-ab52303d13c5.herokuapp.com/)
+<brZ>
+![hangman image](images/hangman-image.png)
 
 # Introduction
 Project milestone 3 for Code Institute Full-stack development program: Python Terminal.
