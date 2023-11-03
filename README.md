@@ -1,6 +1,8 @@
 
 # Hangman - Game 
 
+![hangman image](images/hangman-image.png) 
+
 # Introduction
 Project milestone 3 for Code Institute Full-stack development program: Python Terminal.
 <brZ>
