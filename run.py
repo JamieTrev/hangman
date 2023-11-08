@@ -90,6 +90,7 @@ def print_hangman(wrong):
 
 
 def print_current_word(current_word, guessed_letters):
+    """Prints the current state of the word with guessed and hidden letters."""
     for char in current_word:
         if char in guessed_letters:
             print(char, end=" ")
@@ -98,16 +99,19 @@ def print_current_word(current_word, guessed_letters):
 
 
 def print_empty_lines(current_word):
+    """Prints empty lines corresponding to the length of the word."""
     print("\n" + "\u203E " * len(current_word))
 
 
 def print_current_guessed(current_letters_guessed):
+    """Prints the letters guessed so far by the user."""
     print("\nLetters guessed so far: ")
     for letter in current_letters_guessed:
         print(letter, end=" ")
 
 
 def input_next_guess(current_letters_guessed):
+    """Handles user input for the next guess and validates the input."""
     while True:
         user_input = input("\nGuess a letter: ").lower()
 
@@ -127,6 +131,7 @@ def input_next_guess(current_letters_guessed):
 
 
 def check_guessed_word(current_letters_guessed, current_word, user_input):
+    """Checks if the guessed letter is in the word and updates the guessed letters."""
     current_letters_guessed.append(user_input)
 
     if user_input in current_word:
@@ -141,6 +146,7 @@ def check_guessed_word(current_letters_guessed, current_word, user_input):
 
 
 def main():
+    """Main function to run the Hangman game."""
     play_again = True
     while play_again:
         amount_of_times_wrong = 0
