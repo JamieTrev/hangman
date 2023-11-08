@@ -24,6 +24,7 @@ Hangman is a Python terminal game, which runs in the Code Institute mock termina
     * [Only alphabets are allowed](#only-alphabets-are-allowed) 
     * [Winning](#winning)
     * [Losing](#losing)
+    * [Play Again](#play-again)
 * [Technologies Used](#technologies-used)
     * [Languages Used](#languages-used)
     * [Programs Used](#programs-used)
@@ -115,6 +116,12 @@ If the user guesses all the letters of the word before entering 6 incorrect gues
 ![sorry](images/sorry.png)
 
 With each incorrect guess the user will see the development of the hangman stages. If the user accumulates 6 incorrect guesses, they will see the entire hangman display, the game is over and will receive a message 'Sorry, you've run out of attempts, the word was:' followed by the correct word and the game is over.
+
+### Play Again
+
+![play again](images/play_again.png)
+
+Once the user has reached their conclusion, either correctly guessing the word or after losing with 6 incorrect guesses, they will be given the option to play again. The user is prompted to either select Y for yes or N for no, 'yes' will start the game from the beginning selecting another word at random or 'no' will thank the user for playing and say goodbye.
 
 ## Technologies Used
 ### Languages Used 
